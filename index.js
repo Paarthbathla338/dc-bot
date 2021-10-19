@@ -9,6 +9,19 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.once('ready', () => {
 	console.log('Ready!');
 });
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+const { commandName } = interaction;
+
+	if (commandName == 'sup') {
+		interaction.reply('Sup Bruhh!');
+	} else if (commandName === 'server') {
+		interaction.reply('Server info.');
+	} else if (commandName === 'user') {
+		interaction.reply('User info.');
+	}
+});
 
 // Login to Discord with your client's token
 client.login(token);
