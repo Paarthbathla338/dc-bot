@@ -14,12 +14,12 @@ client.on('interactionCreate', async interaction => {
 
 const { commandName } = interaction;
 
-	if (commandName == 'sup') {
-		interaction.reply('Sup Bruhh!');
+	if (commandName === 'sell') {
+		await interaction.reply('BTC SOLD!');
 	} else if (commandName === 'server') {
-		interaction.reply('Server info.');
+		await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
 	} else if (commandName === 'user') {
-		interaction.reply('User info.');
+        await interaction.reply(`Your tag: ${interaction.user.avatarURL([format, size, dynamic])}\nYour id: ${interaction.user.discriminator}`);
 	}
 });
 
